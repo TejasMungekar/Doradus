@@ -130,11 +130,16 @@ function Manifesto() {
 
 function Services() {
   const services = [
-    ['01', 'UI/UX design', 'User research, journeys, information architecture, wireframes, and prototypes'],
-    ['02', 'Web design', 'Visual direction, responsive layouts, design systems, and considered interactions'],
-    ['03', 'Front-end development', 'Responsive, accessible React interfaces with careful performance and interaction details'],
+    { number: '01', name: 'UX research & audits', description: 'Find the friction, needs, and opportunities shaping your digital experience.', tags: ['User interviews', 'Usability reviews', 'Journey mapping'] },
+    { number: '02', name: 'UI/UX & product design', description: 'Turn complex flows into clear, useful interfaces people enjoy using.', tags: ['Information architecture', 'Wireframes', 'Prototypes'] },
+    { number: '03', name: 'Web design', description: 'Create a distinctive, responsive website that feels like your business.', tags: ['Art direction', 'Responsive layouts', 'Conversion flows'] },
+    { number: '04', name: 'Brand strategy & identity', description: 'Shape a clear point of view and a visual language that carries through the web.', tags: ['Positioning', 'Visual identity', 'Digital guidelines'] },
+    { number: '05', name: 'Customer journey design', description: 'Make every step from first visit to next action feel connected and considered.', tags: ['Experience mapping', 'Service touchpoints', 'Flow design'] },
+    { number: '06', name: 'UX writing & content design', description: 'Give every page and interaction the right words, hierarchy, and direction.', tags: ['Interface copy', 'Page structure', 'Content hierarchy'] },
+    { number: '07', name: 'Design systems & motion', description: 'Build a consistent visual toolkit and bring it to life with purposeful movement.', tags: ['UI libraries', 'Interaction states', 'Motion direction'] },
+    { number: '08', name: 'Front-end development', description: 'Bring approved designs to life as responsive, accessible, high-performance interfaces.', tags: ['React builds', 'Accessible UI', 'Performance'] },
   ]
-  return <section className="section services-section" id="services"><div className="services-heading"><span className="eyebrow section-eyebrow">What we do</span><h2>Thoughtful from<br /><em>the first hello.</em></h2><p>From discovery and interface design to responsive front-end builds, we make digital experiences clear, useful, and considered.</p></div><div className="service-list">{services.map(([n, name, desc]) => <div className="service-row" key={n}><span className="service-n">{n}</span><h3>{name}</h3><p>{desc}</p><ArrowUpRight size={17} /></div>)}</div></section>
+  return <section className="section services-section services-showcase" id="services"><div className="services-showcase-heading"><div><span className="eyebrow section-eyebrow">What we do · 08 capabilities</span><h2>Thoughtful from<br /><em>insight to pixel.</em></h2></div><p>Strategy, research, design, and front-end craft—all the pieces that make a website feel clear, cohesive, and unmistakably yours.</p></div><div className="service-card-grid">{services.map(service => <a className="service-card" href="#contact" key={service.number}><div className="service-card-top"><span>{service.number} <i>/ 08</i></span><ArrowUpRight size={16}/></div><h3>{service.name}</h3><p>{service.description}</p><div className="service-tags">{service.tags.map(tag => <span key={tag}>{tag}</span>)}</div></a>)}</div></section>
 }
 
 function Pricing() {
