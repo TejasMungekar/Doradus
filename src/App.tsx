@@ -7,6 +7,7 @@ const projects = [
   { number: '01', name: 'ReservePilot', type: 'Treasury intelligence · Web app', tone: 'reserve', tag: 'Clarity for your treasury', image: 'photo-1460925895917-afdab827c52f', href: 'https://reservepilot.vercel.app/' },
   { number: '02', name: 'ProtoGen', type: 'AI research tool · Product design', tone: 'proto', tag: 'Research to reality', image: 'photo-1451187580459-43490279c0fa', href: 'https://www.protogent.app/' },
   { number: '03', name: 'Rootsy', type: 'E-commerce · Grocery delivery', tone: 'rootsy', tag: 'Fresh picks, at your door', image: 'photo-1542838132-92c53300491e', href: 'https://rootsy-cyan.vercel.app/' },
+  { number: '04', name: 'RCPP', type: 'Community · Non-profit website', tone: 'rcppro', tag: 'People of action in Pune', image: 'photo-1559027615-cd4628902d4a', href: 'https://rcppro.org/' },
 ]
 
 const shardData = [
@@ -97,15 +98,16 @@ function Hero() {
 
 function Work() {
   return <section className="section work-section" id="work">
-    <div className="section-head"><div><span className="eyebrow section-eyebrow">Selected work <span>— 2022 / 25</span></span><h2>Good work, for<br /><em>good people.</em></h2></div><p className="section-intro">A few recent collaborations that<br className="desktop-only" /> remind us why we love what we do.</p></div>
+    <div className="section-head"><div><span className="eyebrow section-eyebrow">Selected work <span>— 04 projects</span></span><h2>Good work, for<br /><em>good people.</em></h2></div><p className="section-intro">A few recent collaborations that<br className="desktop-only" /> remind us why we love what we do.</p></div>
     <div className="project-grid">{projects.map((project, i) => <a className={`project-card project-${project.tone}`} href={project.href} target="_blank" rel="noreferrer" key={project.name} aria-label={`Open ${project.name} project`}>
       <div className="project-visual" style={{ backgroundImage: `url(https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=1400&q=85)` }}>
         <div className="project-overlay" />
-        <span className="project-index">{project.number} / 03</span>
+        <span className="project-index">{project.number} / 04</span>
         <div className="project-artifact">
           {i === 0 && <div className="reserve-ui"><div className="ui-sidebar"><b>◉ <span>reserve<span>pilot</span></span></b><i>Overview</i><i>Treasury</i><i>Markets</i><i>Reports</i></div><div className="ui-content"><small>EXECUTIVE COCKPIT</small><strong>Good morning, Alex</strong><div className="ui-metrics"><span><small>TOTAL TREASURY</small><b>$180,420</b><i>↗ 2.4%</i></span><span><small>RUNWAY</small><b>8.4 mo</b><i>On track</i></span></div><div className="ui-chart"><div className="chart-bars"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div></div><div className="ui-lines"><i/><i/><i/></div></div></div>}
           {i === 1 && <div className="proto-ui"><div className="proto-orbit" /><span className="proto-brand">PROTOGEN <i>✳</i></span><span className="proto-prompt">FROM PAPER<br /><em>TO PROTOTYPE.</em></span><small>Turn ideas into something real.</small><div className="proto-pill">Research · Synthesis · Build <ArrowUpRight size={12}/></div></div>}
           {i === 2 && <div className="rootsy-ui"><span className="rootsy-brand">rootsy<span>✳</span></span><div className="rootsy-copy"><small>GOOD FOOD, GOOD MOOD</small><strong>Fresh picks<br />for your table.</strong><span>Picked with care. Delivered fresh.</span><i>Shop produce&nbsp; ↗</i></div><div className="produce-bag"><span>🥬</span><span>🍊</span><span>🍅</span><span>🥑</span></div></div>}
+          {i === 3 && <div className="rcppro-ui"><div className="rcppro-nav"><span>ROTARY <b>✳</b> PUNE PROFESSIONALS</span><span>ABOUT&nbsp;&nbsp; WORK&nbsp;&nbsp; JOIN US&nbsp; ↗</span></div><div className="rcppro-copy"><small>SERVICE ABOVE SELF · PUNE, INDIA</small><strong>People of<br /><em>action.</em></strong><span>Connecting professionals to create lasting change in our community.</span><i>Discover our impact&nbsp; ↗</i></div><div className="rcppro-stats"><span><b>01</b><small>COMMUNITY</small></span><span><b>∞</b><small>POSSIBILITIES</small></span></div><div className="rcppro-spark">✳</div></div>}
         </div>
         <span className="project-arrow"><ArrowUpRight size={19} /></span>
       </div>
