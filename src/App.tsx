@@ -80,7 +80,7 @@ function Hero() {
       <motion.div className="hero-copy" style={{ y: titleY, opacity: titleOpacity }}>
         <div className="eyebrow"><span className="eyebrow-dot" /> Independent creative studio <span className="eyebrow-year">Est. 2020</span></div>
         <h1>Make room<br />for <em>remarkable.</em></h1>
-        <div className="hero-footline"><p>We build identities and digital experiences<br className="desktop-only" /> for people moving culture forward.</p><a href="#work" className="circle-link" aria-label="Explore our work"><ArrowDown size={17} /></a></div>
+        <div className="hero-footline"><p>We shape thoughtful interfaces and websites<br className="desktop-only" /> for people moving culture forward.</p><a href="#work" className="circle-link" aria-label="Explore our work"><ArrowDown size={17} /></a></div>
       </motion.div>
       <motion.div className="crystal-stage" style={{ scale: orbScale }} aria-hidden="true">
         <div className="crystal-halo" />
@@ -125,25 +125,23 @@ function CreativeQuotes() {
 }
 
 function Manifesto() {
-  return <section className="manifesto" id="studio"><div className="manifesto-top"><span className="eyebrow">A little about us</span><span className="manifesto-number">D—01</span></div><div className="manifesto-content"><Asterisk className="manifesto-star" size={38} strokeWidth={1.2} /><h2>We believe the<br />best things happen<br />when <em>clarity meets<br />curiosity.</em></h2><div className="manifesto-aside"><p>Doradus is an independent creative studio partnering with ambitious people to make brands matter.</p><a href="#contact" className="under-link">Get to know us <ArrowUpRight size={14} /></a></div></div><div className="manifesto-bottom"><span>Small by design. Big on intention.</span><span>Based everywhere <i>↗</i></span></div></section>
+  return <section className="manifesto" id="studio"><div className="manifesto-top"><span className="eyebrow">A little about us</span><span className="manifesto-number">D—01</span></div><div className="manifesto-content"><Asterisk className="manifesto-star" size={38} strokeWidth={1.2} /><h2>We believe the<br />best things happen<br />when <em>clarity meets<br />curiosity.</em></h2><div className="manifesto-aside"><p>Doradus is an independent digital studio shaping thoughtful interfaces and websites from first sketch to front end.</p><a href="#contact" className="under-link">Get to know us <ArrowUpRight size={14} /></a></div></div><div className="manifesto-bottom"><span>Small by design. Big on intention.</span><span>Based everywhere <i>↗</i></span></div></section>
 }
 
 function Services() {
   const services = [
-    ['01', 'Brand strategy', 'Positioning, research, naming, brand architecture'],
-    ['02', 'Visual identity', 'Art direction, identity systems, guidelines'],
-    ['03', 'UI/UX & website design', 'User research, flows, wireframes, polished responsive interfaces'],
-    ['04', 'Full-stack website builds', 'End-to-end frontend, backend, CMS, integrations, and launch'],
-    ['05', 'Ongoing partnership', 'Creative direction, content, thoughtful evolution'],
+    ['01', 'UI/UX design', 'User research, journeys, information architecture, wireframes, and prototypes'],
+    ['02', 'Web design', 'Visual direction, responsive layouts, design systems, and considered interactions'],
+    ['03', 'Front-end development', 'Responsive, accessible React interfaces with careful performance and interaction details'],
   ]
-  return <section className="section services-section" id="services"><div className="services-heading"><span className="eyebrow section-eyebrow">What we do</span><h2>Thoughtful from<br /><em>the first hello.</em></h2><p>We bring the right people together to make the complex feel considered, and the ordinary feel full of possibility.</p></div><div className="service-list">{services.map(([n, name, desc]) => <div className="service-row" key={n}><span className="service-n">{n}</span><h3>{name}</h3><p>{desc}</p><ArrowUpRight size={17} /></div>)}</div></section>
+  return <section className="section services-section" id="services"><div className="services-heading"><span className="eyebrow section-eyebrow">What we do</span><h2>Thoughtful from<br /><em>the first hello.</em></h2><p>From discovery and interface design to responsive front-end builds, we make digital experiences clear, useful, and considered.</p></div><div className="service-list">{services.map(([n, name, desc]) => <div className="service-row" key={n}><span className="service-n">{n}</span><h3>{name}</h3><p>{desc}</p><ArrowUpRight size={17} /></div>)}</div></section>
 }
 
 function Pricing() {
   const plans = [
-    { number: '01', name: 'Basic', price: '₹12,000', description: 'The essential online home for a growing business.', featured: false, features: ['5-page business website', 'Semi-custom visual direction', 'Domain registration included', 'Mobile-ready SEO foundations', 'Optimized page loading'], href: 'mailto:hello@doradus.studio?subject=Basic%20website%20plan' },
-    { number: '02', name: 'Standard', price: '₹24,000', description: 'More space and ongoing content for your next step.', featured: true, features: ['Everything in Basic', '4 additional website pages', '4 SEO-focused articles each month', 'Up to 10 content updates monthly', 'Domain setup and management'], href: 'mailto:hello@doradus.studio?subject=Standard%20website%20plan' },
-    { number: '03', name: 'Premium', price: '₹35,000', description: 'A fuller site with extra support for search visibility.', featured: false, features: ['Everything in Basic', '8 additional website pages', '8 SEO-focused articles each month', 'Up to 10 content updates monthly', 'Enhanced performance and SEO', 'Domain setup and management'], href: 'mailto:hello@doradus.studio?subject=Premium%20website%20plan' },
+    { number: '01', name: 'Basic', price: '₹12,000', description: 'The essential online home for a growing business.', featured: false, features: ['Up to 5 custom-designed pages', 'Core user flows and wireframes', 'Semi-custom visual direction', 'Responsive front-end implementation', 'Mobile and accessibility pass'], href: 'mailto:hello@doradus.studio?subject=Basic%20website%20plan' },
+    { number: '02', name: 'Standard', price: '₹24,000', description: 'More space and detail for your next step.', featured: true, features: ['Everything in Basic', '4 additional website pages', 'Custom interface components', 'Refined responsive interactions', 'Performance-focused front end'], href: 'mailto:hello@doradus.studio?subject=Standard%20website%20plan' },
+    { number: '03', name: 'Premium', price: '₹35,000', description: 'A more tailored experience, designed around your goals.', featured: false, features: ['Everything in Basic', '8 additional website pages', 'Deeper UX and UI exploration', 'Advanced motion and interactions', 'Reusable front-end components', 'Expanded responsive quality review'], href: 'mailto:hello@doradus.studio?subject=Premium%20website%20plan' },
   ]
   return <section className="pricing-section" id="pricing">
     <div className="pricing-heading"><div><span className="eyebrow">Clear scope. Thoughtful craft.</span><h2>Choose your<br /><em>starting point.</em></h2></div><p>Three straightforward ways to bring your website to life. Every plan includes a responsive, custom-designed experience.</p></div>
@@ -164,7 +162,7 @@ function Faq() {
   const questions = [
     ['Are the listed prices one-time fees?', 'Yes. The plan amount is the one-time website build fee. Hosting is listed separately at ₹3,312 for 48 months and applies to each plan.'],
     ['What is included in the hosting charge?', 'The hosting fee covers the 48-month hosting period shown with each plan. We’ll confirm the hosting setup and any project-specific requirements before work begins.'],
-    ['Can Doradus build a custom or full-stack website?', 'Yes. We can take a website from UI/UX and visual design through frontend, backend, CMS, integrations, and launch. Custom features can be scoped to your needs.'],
+    ['Do you provide backend or full-stack development?', 'Doradus focuses on UI/UX, web design, and front-end development. Backend systems and server-side development are outside our service scope.'],
     ['Can I request extra pages or features?', 'Absolutely. Share what you need and we’ll agree on the scope and price before adding it to the project.'],
     ['What should I prepare before we start?', 'A short description of your business, your goals for the site, and any existing brand assets or useful references are a great starting point. We can work through the rest together.'],
     ['Do you offer design without development?', 'Yes. We can help with UI/UX and website design as a standalone project, or carry the work through to a complete build.'],
