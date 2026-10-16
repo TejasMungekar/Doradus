@@ -162,7 +162,7 @@ function Faq() {
   const questions = [
     ['Are the listed prices one-time fees?', 'Yes. The plan amount is the one-time website build fee. Hosting is listed separately at ₹3,312 for 48 months and applies to each plan.'],
     ['What is included in the hosting charge?', 'The hosting fee covers the 48-month hosting period shown with each plan. We’ll confirm the hosting setup and any project-specific requirements before work begins.'],
-    ['Do you provide backend or full-stack development?', 'Doradus focuses on UI/UX, web design, and front-end development. Backend systems and server-side development are outside our service scope.'],
+    ['Can you build the front end too?', 'Yes. We can carry the work from interface design through responsive front-end development, including layouts, components, and interactions.'],
     ['Can I request extra pages or features?', 'Absolutely. Share what you need and we’ll agree on the scope and price before adding it to the project.'],
     ['What should I prepare before we start?', 'A short description of your business, your goals for the site, and any existing brand assets or useful references are a great starting point. We can work through the rest together.'],
     ['Do you offer design without development?', 'Yes. We can help with UI/UX and website design as a standalone project, or carry the work through to a complete build.'],
