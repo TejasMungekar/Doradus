@@ -144,9 +144,9 @@ function Services() {
 
 function Pricing() {
   const plans = [
-    { number: '01', name: 'Basic', price: '₹12,000', description: 'The essential online home for a growing business.', featured: false, features: ['Up to 5 custom-designed pages', 'Core user flows and wireframes', 'Semi-custom visual direction', 'Responsive front-end implementation', 'Mobile and accessibility pass'], href: 'mailto:hello@doradus.studio?subject=Basic%20website%20plan' },
-    { number: '02', name: 'Standard', price: '₹24,000', description: 'More space and detail for your next step.', featured: true, features: ['Everything in Basic', '4 additional website pages', 'Custom interface components', 'Refined responsive interactions', 'Performance-focused front end'], href: 'mailto:hello@doradus.studio?subject=Standard%20website%20plan' },
-    { number: '03', name: 'Premium', price: '₹35,000', description: 'A more tailored experience, designed around your goals.', featured: false, features: ['Everything in Basic', '8 additional website pages', 'Deeper UX and UI exploration', 'Advanced motion and interactions', 'Reusable front-end components', 'Expanded responsive quality review'], href: 'mailto:hello@doradus.studio?subject=Premium%20website%20plan' },
+    { number: '01', name: 'Basic', price: '₹8,000', description: 'A polished, focused landing page that gives your business a clear place to start.', featured: false, features: ['One end-to-end landing page', 'Discovery call and page structure', 'Custom UI/UX for your core message', 'Responsive front-end development', 'Contact or enquiry form setup', 'Launch-ready accessibility and QA'], href: 'mailto:hello@doradus.studio?subject=Basic%20website%20plan' },
+    { number: '02', name: 'Standard', price: '₹17,000', description: 'A complete small-business website with room to tell the whole story.', featured: true, features: ['Everything in Basic', 'Landing page + 5 custom pages', 'Page-specific layouts and components', 'Responsive interactions and navigation', 'On-page SEO foundations', 'Two rounds of design refinements'], href: 'mailto:hello@doradus.studio?subject=Standard%20website%20plan' },
+    { number: '03', name: 'Premium', price: '₹35,000', description: 'A richer digital experience with more depth, polish, and room to grow.', featured: false, features: ['Everything in Basic and Standard', 'Up to 8 additional pages (14 total)', 'Advanced UI/UX research and prototyping', 'More bespoke visual direction and motion', 'Reusable design system and components', 'Expanded performance, accessibility, and QA'], href: 'mailto:hello@doradus.studio?subject=Premium%20website%20plan' },
   ]
   return <section className="pricing-section" id="pricing">
     <div className="pricing-heading"><div><span className="eyebrow">Clear scope. Thoughtful craft.</span><h2>Choose your<br /><em>starting point.</em></h2></div><p>Three straightforward ways to bring your website to life. Every plan includes a responsive, custom-designed experience.</p></div>
@@ -156,17 +156,17 @@ function Pricing() {
       <div className="price-value"><strong>{plan.price}</strong><span>one-time build fee</span></div>
       <a className="price-cta" href={plan.href}>Choose {plan.name}<ArrowUpRight size={15} /></a>
       <div className="price-feature-list">{plan.features.map(feature => <div key={feature}><span className="feature-check">↗</span>{feature}</div>)}</div>
-      <div className="plan-hosting"><span>Hosting · 48 months</span><strong>+ ₹3,312</strong></div>
+      <div className="plan-hosting"><span>Hostinger Single · 48 months*</span><strong>+ ₹3,312</strong></div>
     </article>)}</div>
     <div className="custom-plan"><span><Asterisk size={16} /> Need something more bespoke?</span><p>Tell us about your project and we’ll shape a plan around it.</p><a href="mailto:hello@doradus.studio?subject=Custom%20website%20project">Let’s scope it <ArrowUpRight size={15} /></a></div>
-    <p className="pricing-note">Hosting is ₹3,312 for 48 months and applies to every plan. Anything outside the listed scope can be discussed before we begin.</p>
+    <p className="pricing-note">*Hostinger Single currently lists at ₹3,312 upfront for 48 months, then renews at ₹289/month. Provider prices exclude GST and can change; hosting is optional and billed separately at the rate confirmed when you book. Anything outside the listed scope can be discussed before we begin.</p>
   </section>
 }
 
 function Faq() {
   const questions = [
-    ['Are the listed prices one-time fees?', 'Yes. The plan amount is the one-time website build fee. Hosting is listed separately at ₹3,312 for 48 months and applies to each plan.'],
-    ['What is included in the hosting charge?', 'The hosting fee covers the 48-month hosting period shown with each plan. We’ll confirm the hosting setup and any project-specific requirements before work begins.'],
+    ['Are the listed prices one-time fees?', 'Yes. The plan amount is the one-time design and front-end build fee. Hosting is optional and billed separately.'],
+    ['How does Hostinger hosting work?', 'The current Hostinger Single offer is ₹3,312 upfront for 48 months and renews at ₹289/month. Provider pricing excludes GST and can change. We’ll confirm the term and renewal price before setup, or you can purchase hosting directly in your own account.'],
     ['Can you build the front end too?', 'Yes. We can carry the work from interface design through responsive front-end development, including layouts, components, and interactions.'],
     ['Can I request extra pages or features?', 'Absolutely. Share what you need and we’ll agree on the scope and price before adding it to the project.'],
     ['What should I prepare before we start?', 'A short description of your business, your goals for the site, and any existing brand assets or useful references are a great starting point. We can work through the rest together.'],
