@@ -1,4 +1,4 @@
-# Doradus Studio
+# BlueOrbit Studio
 
 An independent digital studio portfolio built with React, TypeScript, Vite, Framer Motion, and Lenis.
 

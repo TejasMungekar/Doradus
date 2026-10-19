@@ -55,7 +55,7 @@ function Navigation() {
   const links = [['Work', '#work'], ['Studio', '#studio'], ['Services', '#services'], ['Pricing', '#pricing'], ['FAQ', '#faq'], ['Contact', '#contact']]
   return <>
     <header className="nav-wrap">
-      <a href="#top" className="wordmark" aria-label="Doradus home">DORADUS<span>®</span><i /></a>
+      <a href="#top" className="wordmark" aria-label="BlueOrbit home">BLUEORBIT<span>®</span><i /></a>
       <span className="nav-location">Independent digital studio <b>·</b> Worldwide</span>
       <nav className="desktop-nav" aria-label="Main navigation">{links.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</nav>
       <a href="#contact" className="nav-cta">Let’s talk <ArrowUpRight size={14} /></a>
@@ -123,11 +123,11 @@ function CreativeQuotes() {
     ['02', 'Make with curiosity. Edit with intention.'],
     ['03', 'Beauty is how a good idea invites you in.'],
   ]
-  return <section className="creative-notes" aria-label="Doradus studio notes"><div className="notes-heading"><span className="eyebrow">Collected along the way</span><Asterisk size={19} strokeWidth={1.3} /></div><div className="notes-grid">{notes.map(([number, text]) => <article className="note-card" key={number}><span>{number} <i>/</i> DORADUS NOTES</span><blockquote>“{text}”</blockquote><small>— A thought from the studio</small></article>)}</div></section>
+  return <section className="creative-notes" aria-label="BlueOrbit studio notes"><div className="notes-heading"><span className="eyebrow">Collected along the way</span><Asterisk size={19} strokeWidth={1.3} /></div><div className="notes-grid">{notes.map(([number, text]) => <article className="note-card" key={number}><span>{number} <i>/</i> BLUEORBIT NOTES</span><blockquote>“{text}”</blockquote><small>— A thought from the studio</small></article>)}</div></section>
 }
 
 function Manifesto() {
-  return <section className="manifesto" id="studio"><div className="manifesto-top"><span className="eyebrow">A little about us</span><span className="manifesto-number">D—01</span></div><div className="manifesto-content"><Asterisk className="manifesto-star" size={38} strokeWidth={1.2} /><h2>We believe the<br />best things happen<br />when <em>clarity meets<br />curiosity.</em></h2><div className="manifesto-aside"><p>Doradus is an independent digital studio shaping thoughtful interfaces and websites from first sketch to front end.</p><a href="#contact" className="under-link">Get to know us <ArrowUpRight size={14} /></a></div></div><div className="manifesto-bottom"><span>Small by design. Big on intention.</span><span>Based everywhere <i>↗</i></span></div></section>
+  return <section className="manifesto" id="studio"><div className="manifesto-top"><span className="eyebrow">A little about us</span><span className="manifesto-number">B—01</span></div><div className="manifesto-content"><Asterisk className="manifesto-star" size={38} strokeWidth={1.2} /><h2>We believe the<br />best things happen<br />when <em>clarity meets<br />curiosity.</em></h2><div className="manifesto-aside"><p>BlueOrbit is an independent digital studio shaping thoughtful interfaces and websites from first sketch to front end.</p><a href="#contact" className="under-link">Get to know us <ArrowUpRight size={14} /></a></div></div><div className="manifesto-bottom"><span>Small by design. Big on intention.</span><span>Based everywhere <i>↗</i></span></div></section>
 }
 
 function Services() {
@@ -182,18 +182,18 @@ function Quote() {
 }
 
 function Contact() {
-  return <section className="contact-section" id="contact"><div className="contact-top"><span className="eyebrow">The next good thing starts here</span><span className="contact-number">D—05</span></div><div className="contact-main"><p className="contact-kicker">Have a good one in mind?</p><a className="contact-title" href="mailto:hello@doradus.studio">Let’s make<br /><em>it matter.</em><ArrowUpRight className="contact-arrow" size={44} strokeWidth={1.2} /></a><div className="contact-right"><p>Tell us what you’re dreaming up. We’re always up for a thoughtful conversation.</p><a href="mailto:hello@doradus.studio" className="contact-email">hello@doradus.studio <ArrowUpRight size={15} /></a></div></div></section>
+  return <section className="contact-section" id="contact"><div className="contact-top"><span className="eyebrow">The next good thing starts here</span><span className="contact-number">B—05</span></div><div className="contact-main"><p className="contact-kicker">Have a good one in mind?</p><a className="contact-title" href="mailto:hello@doradus.studio">Let’s make<br /><em>it matter.</em><ArrowUpRight className="contact-arrow" size={44} strokeWidth={1.2} /></a><div className="contact-right"><p>Tell us what you’re dreaming up. We’re always up for a thoughtful conversation.</p><a href="mailto:hello@doradus.studio" className="contact-email">hello@doradus.studio <ArrowUpRight size={15} /></a></div></div></section>
 }
 
 function Footer() {
   return <footer className="site-footer">
     <div className="footer-main">
-      <div className="footer-identity"><a href="#top" className="footer-logo">DORADUS<span>®</span><i /></a><p>Independent by nature.<br />Intentional by design.</p><span className="footer-availability"><i /> Available for select projects</span></div>
+      <div className="footer-identity"><a href="#top" className="footer-logo">BLUEORBIT<span>®</span><i /></a><p>Independent by nature.<br />Intentional by design.</p><span className="footer-availability"><i /> Available for select projects</span></div>
       <div className="footer-column"><span className="footer-label">EXPLORE</span><a href="#work">Selected work <ArrowUpRight size={13}/></a><a href="#studio">The studio <ArrowUpRight size={13}/></a><a href="#services">What we do <ArrowUpRight size={13}/></a><a href="#pricing">Plans & pricing <ArrowUpRight size={13}/></a><a href="#faq">FAQs <ArrowUpRight size={13}/></a></div>
       <div className="footer-column footer-connect"><span className="footer-label">START A CONVERSATION</span><a className="footer-email" href="mailto:hello@doradus.studio">hello@doradus.studio <ArrowUpRight size={16}/></a><p>For new projects, collaborations,<br />or a simple hello.</p><span className="footer-worldwide">Working worldwide <Asterisk size={13}/></span></div>
       <div className="footer-orbit" aria-hidden="true"><Asterisk size={39} strokeWidth={1}/></div>
     </div>
-    <div className="footer-bottom"><span>© 2026 Doradus Studio</span><span>Made with intent <i>✳</i></span><a href="#top">Back to the beginning <ArrowUpRight size={13}/></a></div>
+    <div className="footer-bottom"><span>© 2026 BlueOrbit Studio</span><span>Made with intent <i>✳</i></span><a href="#top">Back to the beginning <ArrowUpRight size={13}/></a></div>
   </footer>
 }
 
