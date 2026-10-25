@@ -1,6 +1,6 @@
 # Protogent Studio
 
-An independent digital studio portfolio built with React, TypeScript, Vite, Framer Motion, and Lenis.
+An independent web design and front-end development studio portfolio built with React, TypeScript, Vite, Framer Motion, and Lenis.
 
 ## Run locally
 
