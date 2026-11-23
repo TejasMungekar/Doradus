@@ -10,6 +10,23 @@ const projects = [
   { number: '04', name: 'RCPP', type: 'Community · Non-profit website', tone: 'rcppro', tag: 'People of action in Pune', image: 'photo-1559027615-cd4628902d4a', href: 'https://rcppro.org/' },
 ]
 
+const INR_PER_USD = 92.7968
+type PriceCurrency = 'INR' | 'USD'
+
+function getDefaultPriceCurrency(): PriceCurrency {
+  if (typeof navigator === 'undefined') return 'INR'
+  const localeRegion = (navigator.language || '').toUpperCase().split('-').pop()
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  return localeRegion === 'IN' || timezone === 'Asia/Kolkata' || timezone === 'Asia/Calcutta' ? 'INR' : 'USD'
+}
+
+function formatPlanPrice(rupees: number, currency: PriceCurrency) {
+  const amount = currency === 'INR' ? rupees : rupees / INR_PER_USD
+  return new Intl.NumberFormat(currency === 'INR' ? 'en-IN' : 'en-US', {
+    style: 'currency', currency, minimumFractionDigits: 0, maximumFractionDigits: currency === 'INR' ? 2 : 0,
+  }).format(amount)
+}
+
 const shardData = [
   { x: -104, y: -83, r: -13, sx: -500, sy: -390, sr: -280, d: 1.05 },
   { x: -13, y: -131, r: 8, sx: -115, sy: -630, sr: 174, d: .91 },
@@ -145,23 +162,24 @@ function Services() {
 }
 
 function Pricing() {
+  const [currency, setCurrency] = useState<PriceCurrency>(getDefaultPriceCurrency)
   const plans = [
-    { number: '01', name: 'Basic', price: '₹12,999', description: 'A polished five-page business website, thoughtfully designed and built for launch.', featured: false, features: ['5 custom-designed website pages', 'Discovery, sitemap, and page hierarchy', 'Custom UI/UX and responsive visual design', 'Responsive front-end build for mobile and desktop', 'Contact form, social links, and click-to-call/email', 'Gallery or testimonials section, SEO basics, and launch QA'], hostingTerm: '12 months', hostingPrice: '₹2,251', hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Basic%20website%20plan' },
-    { number: '02', name: 'Standard', price: '₹20,599', description: 'A complete small-business website with four extra pages and more room to grow.', featured: true, features: ['Everything in Basic', '4 additional custom pages (9 total)', 'Page-specific layouts and custom components', 'Refined navigation and interactive details', 'On-page SEO and social sharing setup', '30 days of post-launch bug-fix support'], hostingTerm: '48 months', hostingPrice: '₹3,908.16', hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Standard%20website%20plan' },
-    { number: '03', name: 'Premium', price: '₹28,499', description: 'A broader, more bespoke website with elevated UX/UI and a 17-page scope.', featured: false, features: ['Everything in Standard', '8 additional custom pages (17 total)', 'Advanced UI/UX exploration and prototyping', 'More bespoke visual direction and motion', 'Reusable interface system and components', 'Expanded performance, accessibility, and launch review'], hostingTerm: '48 months', hostingPrice: '₹3,908.16', hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Premium%20website%20plan' },
+    { number: '01', name: 'Basic', price: 12999, description: 'A polished five-page business website, thoughtfully designed and built for launch.', featured: false, features: ['5 custom-designed website pages', 'Discovery, sitemap, and page hierarchy', 'Custom UI/UX and responsive visual design', 'Responsive front-end build for mobile and desktop', 'Contact form, social links, and click-to-call/email', 'Gallery or testimonials section, SEO basics, and launch QA'], hostingTerm: '12 months', hostingPrice: 2251, hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Basic%20website%20plan' },
+    { number: '02', name: 'Standard', price: 20599, description: 'A complete small-business website with four extra pages and more room to grow.', featured: true, features: ['Everything in Basic', '4 additional custom pages (9 total)', 'Page-specific layouts and custom components', 'Refined navigation and interactive details', 'On-page SEO and social sharing setup', '30 days of post-launch bug-fix support'], hostingTerm: '48 months', hostingPrice: 3908.16, hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Standard%20website%20plan' },
+    { number: '03', name: 'Premium', price: 28499, description: 'A broader, more bespoke website with elevated UX/UI and a 17-page scope.', featured: false, features: ['Everything in Standard', '8 additional custom pages (17 total)', 'Advanced UI/UX exploration and prototyping', 'More bespoke visual direction and motion', 'Reusable interface system and components', 'Expanded performance, accessibility, and launch review'], hostingTerm: '48 months', hostingPrice: 3908.16, hostingFeatures: '1 website · 10 GB SSD · weekly backups · SSL', href: 'mailto:tejas@protogent.app,monish@protogent.app?subject=Premium%20website%20plan' },
   ]
   return <section className="pricing-section" id="pricing">
-    <div className="pricing-heading"><div><span className="eyebrow">Clear scope. Thoughtful craft.</span><h2>Choose your<br /><em>starting point.</em></h2></div><p>Three straightforward ways to bring your website to life. Every plan includes a responsive, custom-designed experience.</p></div>
+    <div className="pricing-heading"><div><span className="eyebrow">Clear scope. Thoughtful craft.</span><h2>Choose your<br /><em>starting point.</em></h2></div><div className="pricing-heading-copy"><p>Three straightforward ways to bring your website to life. Every plan includes a responsive, custom-designed experience.</p><div className="currency-toggle" role="group" aria-label="Display prices in"><span>DISPLAY</span><button type="button" className={currency === 'INR' ? 'is-active' : ''} aria-pressed={currency === 'INR'} onClick={() => setCurrency('INR')}>₹ INR</button><button type="button" className={currency === 'USD' ? 'is-active' : ''} aria-pressed={currency === 'USD'} onClick={() => setCurrency('USD')}>$ USD</button></div></div></div>
     <div className="pricing-grid">{plans.map(plan => <article className={`price-card ${plan.featured ? 'is-featured' : ''}`} key={plan.name}>
       {plan.featured && <span className="popular-label"><Asterisk size={12} /> MOST POPULAR</span>}
       <div className="price-card-top"><span className="price-number">{plan.number} / WEBSITE PLAN</span><h3>{plan.name}</h3><p>{plan.description}</p></div>
-      <div className="price-value"><strong>{plan.price}</strong><span>one-time build fee</span></div>
+      <div className="price-value"><strong>{formatPlanPrice(plan.price, currency)}</strong><span>one-time build fee</span></div>
       <a className="price-cta" href={plan.href}>Choose {plan.name}<ArrowUpRight size={15} /></a>
       <div className="price-feature-list">{plan.features.map(feature => <div key={feature}><span className="feature-check">↗</span>{feature}</div>)}</div>
-      <div className="plan-hosting"><span>Hostinger Single · {plan.hostingTerm}</span><strong>+ {plan.hostingPrice}</strong><small>{plan.hostingFeatures}</small></div>
+      <div className="plan-hosting"><span>Hostinger Single · {plan.hostingTerm}</span><strong>+ {formatPlanPrice(plan.hostingPrice, currency)}</strong><small>{plan.hostingFeatures}</small></div>
     </article>)}</div>
     <div className="custom-plan"><span><Asterisk size={16} /> Need something more bespoke?</span><p>Tell us about your project and we’ll shape a plan around it.</p><a href="mailto:tejas@protogent.app,monish@protogent.app?subject=Custom%20website%20project">Let’s scope it <ArrowUpRight size={15} /></a></div>
-    <p className="pricing-note">Hosting is optional and billed separately from the one-time website build fee. Amounts shown are estimates for the selected Hostinger term; confirm checkout total, applicable taxes, and renewal pricing before purchase. Anything outside the listed scope can be discussed before we begin.</p>
+    <p className="pricing-note">USD display uses an indicative RBI reference rate of ₹92.7968 per US$1 (23 Nov 2026). USD values are approximate; INR remains the base quote, and final international pricing should be confirmed before booking. Hosting is optional and billed separately; confirm checkout taxes and renewal pricing before purchase.</p>
   </section>
 }
 
