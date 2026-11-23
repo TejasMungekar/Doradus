@@ -55,7 +55,7 @@ function Navigation() {
   const links = [['Work', '#work'], ['Studio', '#studio'], ['Services', '#services'], ['Pricing', '#pricing'], ['FAQ', '#faq'], ['Contact', '#contact']]
   return <>
     <header className="nav-wrap">
-      <a href="#top" className="wordmark" aria-label="Protogent home">PROTOGENT<span>®</span><i /></a>
+      <a href="#top" className="wordmark" aria-label="Protogent home"><img src="/protogent-brand.svg" alt="Protogent" /></a>
       <span className="nav-location">Web design & development <b>·</b> Worldwide</span>
       <nav className="desktop-nav" aria-label="Main navigation">{links.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</nav>
       <a href="#contact" className="nav-cta">Let’s talk <ArrowUpRight size={14} /></a>
@@ -188,7 +188,7 @@ function Contact() {
 function Footer() {
   return <footer className="site-footer">
     <div className="footer-main">
-      <div className="footer-identity"><a href="#top" className="footer-logo">PROTOGENT<span>®</span><i /></a><p>Independent by nature.<br />Intentional by design.</p><span className="footer-availability"><i /> Available for select projects</span></div>
+      <div className="footer-identity"><a href="#top" className="footer-logo" aria-label="Back to Protogent home"><img src="/protogent-brand.svg" alt="Protogent" /></a><p>Independent by nature.<br />Intentional by design.</p><span className="footer-availability"><i /> Available for select projects</span></div>
       <div className="footer-column"><span className="footer-label">EXPLORE</span><a href="#work">Selected work <ArrowUpRight size={13}/></a><a href="#studio">The studio <ArrowUpRight size={13}/></a><a href="#services">What we do <ArrowUpRight size={13}/></a><a href="#pricing">Plans & pricing <ArrowUpRight size={13}/></a><a href="#faq">FAQs <ArrowUpRight size={13}/></a></div>
       <div className="footer-column footer-connect"><span className="footer-label">START A CONVERSATION</span><a className="footer-email" href="mailto:tejas@protogent.app,monish@protogent.app">tejas@protogent.app<br />monish@protogent.app <ArrowUpRight size={16}/></a><p>For new projects, collaborations,<br />or a simple hello.</p><span className="footer-worldwide">Working worldwide <Asterisk size={13}/></span></div>
       <div className="footer-orbit" aria-hidden="true"><Asterisk size={39} strokeWidth={1}/></div>
