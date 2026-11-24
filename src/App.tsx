@@ -5,7 +5,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Asterisk, Menu, X, Zap } from 'luc
 
 const projects = [
   { number: '01', name: 'ReservePilot', type: 'Treasury intelligence · Web app', tone: 'reserve', tag: 'Clarity for your treasury', image: 'photo-1460925895917-afdab827c52f', href: 'https://reservepilot.vercel.app/' },
-  { number: '02', name: 'ProtoGen', type: 'AI research tool · Product design', tone: 'proto', tag: 'Research to reality', image: 'photo-1451187580459-43490279c0fa', href: 'https://www.protogent.app/' },
+  { number: '02', name: 'ProtoGen', type: 'AI research tool · Product design', tone: 'proto', tag: 'Research to reality', image: 'photo-1451187580459-43490279c0fa', href: 'https://protogen-100.vercel.app/' },
   { number: '03', name: 'Morrow & Moss', type: 'E-commerce · Pantry goods', tone: 'morrow', tag: 'A little good, every day', image: 'photo-1542838132-92c53300491e', href: 'https://morrowandmoss.netlify.app/' },
   { number: '04', name: 'RCPP', type: 'Community · Non-profit website', tone: 'rcppro', tag: 'People of action in Pune', image: 'photo-1559027615-cd4628902d4a', href: 'https://rcppro.org/' },
 ]
